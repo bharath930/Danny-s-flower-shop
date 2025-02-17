@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny's Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body background="flowers/background 6.avif">
+    <header>
+        <h1>Danny's Flower Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" style="color: rgb(38, 246, 31);">Home</a></li>
+                <li><a href="#shop"style="color: rgb(38, 246, 31);">Shop</a></li>
+                <li><a href="#about"style="color:rgb(38, 246, 31);">About</a></li>
+                <li><a href="#contact"style="color: rgb(38, 246, 31);">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2 style="color:rgb(16, 22, 16);">Welcome to Danny's flowers Shop</h2>
+        <p style="color: rgb(16, 22, 16);">Fresh and beautiful flowers delivered to your doorstep.</p>
+    </section>
+    
+    <section id="shop">
+        <h2 style="color:black;">Shop</h2>
+        <div class="product">
+            <img src="flowers/roseflower.jpeg" alt="Rose Bouquet">
+            <h3>Rose Bouquet</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Rose Bouquet', 20.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/PinkTulipsLove.webp" alt="Tulip's Bouquet">
+            <h3>Tulip Bouquet</h3>
+            <p>$25.00</p>
+            <button onclick="addToCart('Tulip Bouquet', 25.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/lavender.jpg" alt="Lavender Bouquet">
+            <h3>Lavender Bouquet</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Lavender Bouquet', 20.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/orchids.jpeg" alt="Orchids Bouquet">
+            <h3>Orchids Bouquet</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Orchids Bouquet', 20.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/lily.avif" alt="Lily Bouquet">
+            <h3>Lily Bouquet</h3>
+            <p>$15.00</p>
+            <button onclick="addToCart('Lily Bouquet', 15.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/daisy.jpeg" alt="Daisy Bouquet">
+            <h3>Daisy Bouquet</h3>
+            <p>$10.00</p>
+            <button onclick="addToCart('Daisy Bouquet', 10.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/dahila.jpeg" alt="Dahila Bouquet">
+            <h3>Dahila Bouquet</h3>
+            <p>$10.00</p>
+            <button onclick="addToCart('Dahila Bouquet', 10.00)">Add to Cart</button>
+        </div>
+    </section>
+    
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total Cost: $<span id="total-cost">0.00</span></h3>
+    </section>
+    
+    <section id="about">
+        <h2 style="color:olivedrab;">About Us</h2>
+        <p style="color:olivegreen;">At Danny’s Flower Shop, we bring the beauty of fresh, handpicked flowers to your special moments. 
+            <br>Whether it's love, celebration, or a simple gesture of kindness, our stunning floral arrangements speak louder than words.
+
+            <br>🌸 Fresh Blooms | Elegant Designs | Timely Delivery 🌸
+            
+            <br>Let us add a touch of nature’s beauty to your life! 💐✨</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@danniesflowers.com</p>
+        <p>Phone No: 7673958421</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Dannies Flower Shop. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        let cart = [];
+        let totalCost = 0;
+        
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            totalCost += price;
+            updateCartDisplay();
+            alert(`${product} has been added to the cart.`);
+        }
+        
+        function updateCartDisplay() {
+            const cartList = document.getElementById("cart-items");
+            const totalCostElement = document.getElementById("total-cost");
+            cartList.innerHTML = "";
+            cart.forEach(item => {
+                let listItem = document.createElement("li");
+                listItem.textContent = `${item.product} - $${item.price.toFixed(2)}`;
+                cartList.appendChild(listItem);
+            });
+            totalCostElement.textContent = totalCost.toFixed(2);
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('flowers/background\ 6.avif') no-repeat center center fixed;
+            background-size: cover;
+            color: 0000;
+            padding-bottom: 50px;
+        }
+       
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .product {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: white;
+        }
+        .product img {
+            width: 150px;
+            height: 150px;
+        }
+        button {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #cart {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</body>
+</html>
