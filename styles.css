@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: url('flowers/background 6.avif') no-repeat center center fixed;
+    background: url('background\ 6.avif') no-repeat center center fixed;
     background-size: cover;
     color: black;
     padding-bottom: 50px;
