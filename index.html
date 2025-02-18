@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny's Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Danny's Flower Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Danny's Flower Shop</h2>
+        <p>Fresh and beautiful flowers delivered to your doorstep.</p>
+    </section>
+    
+    <section id="shop">
+        <h2>Shop</h2>
+        <div class="product">
+            <img src="flowers/roseflower.jpeg" alt="Rose Bouquet">
+            <h3>Rose Bouquet</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Rose Bouquet', 20.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/PinkTulipsLove.webp" alt="Tulip's Bouquet">
+            <h3>Tulip Bouquet</h3>
+            <p>$25.00</p>
+            <button onclick="addToCart('Tulip Bouquet', 25.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/lavender.jpg" alt="Lavender Bouquet">
+            <h3>Lavender Bouquet</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Lavender Bouquet', 20.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/orchids.jpeg" alt="Orchids Bouquet">
+            <h3>Orchids Bouquet</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Orchids Bouquet', 20.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/lily.avif" alt="Lily Bouquet">
+            <h3>Lily Bouquet</h3>
+            <p>$15.00</p>
+            <button onclick="addToCart('Lily Bouquet', 15.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/daisy.jpeg" alt="Daisy Bouquet">
+            <h3>Daisy Bouquet</h3>
+            <p>$10.00</p>
+            <button onclick="addToCart('Daisy Bouquet', 10.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="flowers/dahila.jpeg" alt="Dahila Bouquet">
+            <h3>Dahila Bouquet</h3>
+            <p>$10.00</p>
+            <button onclick="addToCart('Dahila Bouquet', 10.00)">Add to Cart</button>
+        </div>
+    </section>
+    
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total Cost: $<span id="total-cost">0.00</span></h3>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Danny’s Flower Shop, we bring the beauty of fresh, handpicked flowers to your special moments.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@dannysflowers.com</p>
+        <p>Phone No: 7673958421</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Danny’s Flower Shop. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
